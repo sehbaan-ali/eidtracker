@@ -131,7 +131,7 @@ export function OrderTable({
                 <TableCell className="font-medium">
                   <div className="flex items-center gap-2">
                     {order.is_delivery && (
-                      <Truck className="h-4 w-4 text-primary/60 flex-shrink-0" title="Delivery Order" />
+                      <Truck className="h-4 w-4 text-primary/60 flex-shrink-0" aria-label="Delivery Order" />
                     )}
                     <span>{order.customer_name}</span>
                   </div>
