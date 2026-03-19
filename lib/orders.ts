@@ -94,7 +94,8 @@ export async function createOrder(
 export async function updateOrder(
   id: string,
   formData: OrderFormData,
-  pricing: AppSettings['pricing']
+  pricing: AppSettings['pricing'],
+  orderNumber?: number
 ): Promise<Order> {
   // Calculate total amount (keep existing delivery/payment status)
   const totalAmount = calculateOrderTotal(
@@ -125,6 +126,11 @@ export async function updateOrder(
     extra_notes: formData.extraNotes,
     total_amount: totalAmount,
     // Don't update delivery/payment status when editing order details
+  }
+
+  // Include order number if provided
+  if (orderNumber !== undefined) {
+    updates.order_number = orderNumber
   }
 
   const { data, error } = await supabase

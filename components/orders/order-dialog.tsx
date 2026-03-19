@@ -157,7 +157,7 @@ export function OrderDialog({
 
       let savedOrder: Order
       if (existingOrder) {
-        savedOrder = await updateOrder(existingOrder.id, formData, settings.pricing)
+        savedOrder = await updateOrder(existingOrder.id, formData, settings.pricing, customOrderNumber)
         toast.success('Order updated successfully!')
       } else {
         savedOrder = await createOrder(formData, settings.pricing, undefined, customOrderNumber)
@@ -184,20 +184,18 @@ export function OrderDialog({
         </DialogHeader>
 
         <div className="space-y-6 py-4">
-          {/* Order Number */}
-          {!existingOrder && (
-            <div className="space-y-2">
-              <Label htmlFor="order-number">Order Number *</Label>
-              <Input
-                id="order-number"
-                type="number"
-                value={customOrderNumber}
-                onChange={(e) => setCustomOrderNumber(parseInt(e.target.value) || 1)}
-                min="1"
-                className="max-w-[200px]"
-              />
-            </div>
-          )}
+          {/* Order Number - Always shown, editable */}
+          <div className="space-y-2">
+            <Label htmlFor="order-number">Order Number *</Label>
+            <Input
+              id="order-number"
+              type="number"
+              value={customOrderNumber}
+              onChange={(e) => setCustomOrderNumber(parseInt(e.target.value) || 1)}
+              min="1"
+              className="max-w-[200px]"
+            />
+          </div>
 
           {/* Customer Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
