@@ -101,26 +101,25 @@ export function OrderTable({
   return (
     <div className="bg-card border border-border rounded-lg overflow-hidden h-full flex flex-col">
       <div className="overflow-x-auto overflow-y-auto flex-1">
-        <div className="min-w-[1300px]">
-          <Table>
+        <table className="w-full caption-bottom text-sm min-w-[1300px]">
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[70px]">#</TableHead>
-              <TableHead className="min-w-[120px]">Name</TableHead>
-              <TableHead className="min-w-[100px]">Phone</TableHead>
-              {orderFilter === 'deliveries' && <TableHead className="min-w-[150px]">Address</TableHead>}
-              {orderFilter !== 'chicken' && <TableHead className="text-center w-[70px]">M.Full</TableHead>}
-              {orderFilter !== 'chicken' && <TableHead className="text-center w-[70px]">M.Half</TableHead>}
-              {orderFilter !== 'mutton' && <TableHead className="text-center w-[70px]">C.Full</TableHead>}
-              {orderFilter !== 'mutton' && <TableHead className="text-center w-[70px]">C.Half</TableHead>}
-              <TableHead className="text-center w-[80px]">Chicken</TableHead>
-              <TableHead className="text-center w-[90px]">Wattalpam</TableHead>
-              <TableHead className="text-center w-[80px]">Custom</TableHead>
-              <TableHead className="text-center w-[70px]">Notes</TableHead>
-              <TableHead className="text-right w-[90px]">Total</TableHead>
-              <TableHead className="w-[100px]">Status</TableHead>
-              <TableHead className="w-[120px]">Payment</TableHead>
-              <TableHead className="text-right w-[100px]">Actions</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card w-[70px]">#</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card min-w-[120px]">Name</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card min-w-[100px]">Phone</TableHead>
+              {orderFilter === 'deliveries' && <TableHead className="sticky top-0 z-10 bg-card min-w-[150px]">Address</TableHead>}
+              {orderFilter !== 'chicken' && <TableHead className="sticky top-0 z-10 bg-card text-center w-[70px]">M.Full</TableHead>}
+              {orderFilter !== 'chicken' && <TableHead className="sticky top-0 z-10 bg-card text-center w-[70px]">M.Half</TableHead>}
+              {orderFilter !== 'mutton' && <TableHead className="sticky top-0 z-10 bg-card text-center w-[70px]">C.Full</TableHead>}
+              {orderFilter !== 'mutton' && <TableHead className="sticky top-0 z-10 bg-card text-center w-[70px]">C.Half</TableHead>}
+              <TableHead className="sticky top-0 z-10 bg-card text-center w-[80px]">Chicken</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card text-center w-[90px]">Wattalpam</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card text-center w-[80px]">Custom</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card text-center w-[70px]">Notes</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card text-right w-[90px]">Total</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card w-[100px]">Status</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card w-[120px]">Payment</TableHead>
+              <TableHead className="sticky top-0 z-10 bg-card text-right w-[100px]">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -280,8 +279,7 @@ export function OrderTable({
               </TableRow>
             ))}
           </TableBody>
-        </Table>
-        </div>
+        </table>
       </div>
     </div>
   )
